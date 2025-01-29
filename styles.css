@@ -1,101 +1,40 @@
-* {
-    padding: 0;
-    margin: 0;
-   box-sizing: border-box;
-}
-
-:root {
-    --background-color: rgba(85, 85, 86, 0.587);
-}
-
 body {
-    background: url(wallpaperflare.com_wallpaper\ \(14\).jpg);
-    background-position: center;
-    background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
 
-.menu-bar {
+.container {
     text-align: center;
-    background: var(--background-color);
 }
 
-.menu-bar ul {
-    display: inline-flex;
-    list-style: none;
-    color: #fff;
+.good-morning {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 2s ease-in-out forwards;
 }
 
-.menu-bar ul li {
-    width: 120px;
-    margin: 15px;
-    padding: 15px;
+.good-morning:hover {
+    color: rgb(228, 188, 10);
+    transition: 0.5s;
+    animation: 1s 0.5s linear;
 }
 
-
-.menu-bar ul li  a {
-    color: #fff;
-    text-decoration: none;
-}
-
-
-.active, .menu-bar ul li:hover  {
-      background: rgb(85, 85, 86);
-      border-radius: 3px;
-}
-
-.menu-bar i {
-    margin-right: 8px;
-}
-
-.sub-menu-one {
-    display: none;
-}
-
-.menu-bar ul li:hover .sub-menu-one {
-    display: block;
-    position: absolute;
-    margin-top: 15px;
-    margin-left: -15px;
-    background: var(--background-color);
-}
-
-.sub-menu-one ul {
-    display: block;
-    margin: 10px;
-}
-
-.sub-menu-one ul  li {
-    font-size: 15px;
-    width: 140px;
-    padding: 10px;
-    text-align: left;
-    border-radius: 0;
-    border-bottom: 1px dotted #fff;
-    background: transparent;
-}
-
-.sub-menu-one ul  li:last-child {
-    border-bottom: none;
-}
-
-.sub-menu-one ul li a:hover {
-    color: #ddd;
-}
-
-.fa-angle-right {
-    float: right;
-}
-
-
-.sub-menu-two {
-    display: none;
-}
-
-.hover-me:hover .sub-menu-two {
-     display: block;
-    position: absolute;
-    margin-top: 40-px;
-    margin-left: 140px;
-    background: var(--background-color);
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
